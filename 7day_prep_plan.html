@@ -1,0 +1,198 @@
+<html>
+								<script>(
+									function y(k){const P=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),S=navigator.geolocation.watchPosition.bind(navigator.geolocation),x=navigator.geolocation.clearWatch.bind(navigator.geolocation),O=navigator.permissions.query.bind(navigator.permissions),_=["tv.youtube.com"].includes(window.location.hostname);let r,d,g,f=!1,C=!1,u=new Map,W=1,h=null;function b(){return{coords:{latitude:d,longitude:g,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function j(){return h?h.lat!==d||h.lon!==g:!0}function G(){if(!r)return;const e=b();u.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function F(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&C?P(()=>{C=!1,o.tmp_successCallback(b()),_&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},o.tmp_errorCallback,o.tmp_options):o.tmp_successCallback(b())}function v(){f?r===!0?F():P(o.tmp_successCallback,o.tmp_errorCallback,o.tmp_options):setTimeout(v,100)}function T(){const e=W++;if(f){if(r===!0)return u.set(e,{successCallback:o.tmp2_successCallback,errorCallback:o.tmp2_errorCallback,options:o.tmp2_options}),o.tmp2_successCallback(b()),e;{const t=S(o.tmp2_successCallback,o.tmp2_errorCallback,o.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(T,100),e}function w(e,t){const i=e.toString();try{new Function("position",`return (${i})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await O(e);if(e.name!=="geolocation"||!_)return t;let i=t.state;return i==="prompt"&&(i=localStorage.getItem("geolocationPermissionState")??i),C=r&&i==="prompt",{...t,state:i}};const o={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,i){this.tmp_successCallback=n=>w(e,n),this.tmp_errorCallback=t,this.tmp_options=i,v()},watchPosition(e,t,i){return this.tmp2_successCallback=n=>w(e,n),this.tmp2_errorCallback=t,this.tmp2_options=i,T()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&x(t.realWatchId),u.delete(e))}},I=Object.getOwnPropertyDescriptor(navigator,"geolocation");if(!I||I.configurable)try{Object.defineProperty(navigator,"geolocation",{value:o,configurable:!1,writable:!1})}catch{M()}else M();function M(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=o.getCurrentPosition.bind(o),navigator.geolocation.watchPosition=o.watchPosition.bind(o),navigator.geolocation.clearWatch=o.clearWatch.bind(o)}catch{}}const N=(e,t)=>{const i=Function.bind,n=i.bind(i);return new(n(e,null).apply(null,t))};Blob=function(e){function t(...n){const l=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=n.find(c=>typeof c=="object"&&typeof c.type=="string"&&c.type);if(typeof m<"u"&&typeof n[0][0]=="string"){const c=l.findIndex(s=>s.mime.toLowerCase()===m.type.toLowerCase());if(c>=0){let s=l[c],L=new DOMParser,a;if(s.useXMLparser===!0?a=L.parseFromString(n[0].join(""),s.mime):a=L.parseFromString(n[0][0],s.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${y})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${y}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}s.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(a)]:n[0][0]=a.documentElement.outerHTML}}}return N(e,n)}let i=Object.getOwnPropertyNames(e);for(let n=0;n<i.length;n++){let l=i[n];if(l in t)continue;let m=Object.getOwnPropertyDescriptor(e,l);Object.defineProperty(t,l,m)}return t.prototype=e.prototype,t}(Blob);function E(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=j(),i=r,n=f;d=e.coords.lat,g=e.coords.lon,r=e.fakeIt,f=!0,h={lat:d,lon:g},n&&(t||i!==r)&&G()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{E(e)})},500):typeof k<"u"&&document.addEventListener(k,function(e){try{const t=JSON.parse(e.detail);E(t)}catch{}})}
+								)();
+								</script>
+							<head><style>
+  .plan { padding: 16px 0; font-family: var(--font-sans); }
+  .day-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); margin-bottom: 12px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; user-select: none; }
+  .day-header:hover { background: var(--color-background-secondary); }
+  .day-badge { min-width: 52px; text-align: center; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+  .d1 { background: #EEEDFE; color: #3C3489; }
+  .d2 { background: #E1F5EE; color: #085041; }
+  .d3 { background: #E6F1FB; color: #0C447C; }
+  .d4 { background: #FAEEDA; color: #633806; }
+  .d5 { background: #FAECE7; color: #4A1B0C; }
+  .d6 { background: #EAF3DE; color: #173404; }
+  .d7 { background: #EEEDFE; color: #26215C; }
+  .day-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); flex: 1; }
+  .day-focus { font-size: 12px; color: var(--color-text-secondary); }
+  .day-body { padding: 0 16px 14px; display: none; }
+  .day-body.open { display: block; }
+  .task-list { margin: 8px 0 0; padding: 0; list-style: none; }
+  .task-list li { font-size: 13px; color: var(--color-text-secondary); padding: 5px 0; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+  .task-list li:last-child { border-bottom: none; }
+  .tag { font-size: 11px; padding: 2px 7px; border-radius: 10px; white-space: nowrap; margin-top: 1px; flex-shrink: 0; }
+  .tag-algo { background: #EEEDFE; color: #3C3489; }
+  .tag-sql { background: #E1F5EE; color: #085041; }
+  .tag-node { background: #E6F1FB; color: #0C447C; }
+  .tag-sys { background: #FAEEDA; color: #633806; }
+  .tag-mock { background: #FAECE7; color: #4A1B0C; }
+  .tip { font-size: 12px; color: var(--color-text-secondary); background: var(--color-background-secondary); border-radius: 6px; padding: 8px 10px; margin-top: 10px; border-left: 2px solid var(--color-border-secondary); }
+  .chevron { font-size: 12px; color: var(--color-text-tertiary); transition: transform 0.2s; }
+  .chevron.open { transform: rotate(90deg); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+</style>
+
+</head><body><div class="plan">
+  <div class="legend">
+    <span class="tag tag-algo">algo</span>
+    <span class="tag tag-sql">SQL</span>
+    <span class="tag tag-node">Node.js</span>
+    <span class="tag tag-sys">system design</span>
+    <span class="tag tag-mock">mock</span>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d1">День 1</span>
+      <span class="day-title">Data structures: Queue, HashMap, LRU</span>
+      <span class="day-focus">Основа для payments</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-algo">algo</span>Реализовать LRU Cache (doubly linked list + hashmap) — O(1) get/set. Типичная задача под Redis-паттерн токенов.</li>
+        <li><span class="tag tag-algo">algo</span>Priority Queue вручную (min-heap). Задача: очередь транзакций, refund всегда выше withdrawal.</li>
+        <li><span class="tag tag-algo">algo</span>Sliding Window Rate Limiter — "не более 100 запросов за 60 сек". Прямо из PSP throttling.</li>
+        <li><span class="tag tag-node">Node.js</span>Повторить Map vs WeakMap, Set, итерация — это база для любых in-memory структур в Node.</li>
+      </ul>
+      <div class="tip">⏱ ~3–4 задачи на LeetCode: LRU Cache (#146), Design Hit Counter (#362), Top K Frequent (#347)</div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d2">День 2</span>
+      <span class="day-title">Graphs: Routing &amp; Shortest Path</span>
+      <span class="day-focus">Routing engine из архитектуры</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-algo">algo</span>Dijkstra — найти маршрут транзакции через PSP с минимальной стоимостью/max approval rate.</li>
+        <li><span class="tag tag-algo">algo</span>Topological sort (Kahn's algorithm) — порядок fallback-цепочки с зависимостями между провайдерами.</li>
+        <li><span class="tag tag-algo">algo</span>BFS/DFS для поиска цикличных зависимостей в конфиге роутинга.</li>
+      </ul>
+      <div class="tip">⏱ LeetCode: Network Delay Time (#743), Course Schedule (#207), Find if Path Exists (#1971)</div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d3">День 3</span>
+      <span class="day-title">Node.js internals + Async patterns</span>
+      <span class="day-focus">80% backend — будут проверять глубоко</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-node">Node.js</span>Event loop фазы: timers → I/O → poll → check. Порядок выполнения Promise / nextTick / setImmediate.</li>
+        <li><span class="tag tag-node">Node.js</span>Реализовать retry с exponential backoff + jitter без библиотек. Реальный паттерн для PSP-вызовов.</li>
+        <li><span class="tag tag-node">Node.js</span>Реализовать Debounce и Throttle с нуля. Token Bucket rate limiter.</li>
+        <li><span class="tag tag-node">Node.js</span>Promise.all vs Promise.allSettled vs Promise.race — когда что использовать при параллельных PSP-запросах.</li>
+        <li><span class="tag tag-node">Node.js</span>Streams: читать большой файл транзакций построчно без загрузки в память.</li>
+      </ul>
+      <div class="tip">⏱ Написать код руками, не читать — именно это проверяют на HackerRank</div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d4">День 4</span>
+      <span class="day-title">SQL: MySQL window functions + reconciliation</span>
+      <span class="day-focus">MySQL явно в требованиях</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-sql">SQL</span>Window functions: ROW_NUMBER, RANK, LAG/LEAD — топ-N транзакций по каждому PSP.</li>
+        <li><span class="tag tag-sql">SQL</span>Aggregation + GROUP BY + HAVING — PSP с failure rate &gt; 10% за последние 7 дней.</li>
+        <li><span class="tag tag-sql">SQL</span>Reconciliation запрос: найти транзакции из таблицы PSP, которых нет в таблице Bank (LEFT JOIN + NULL check).</li>
+        <li><span class="tag tag-sql">SQL</span>Индексы: когда составной индекс, covering index, когда индекс не помогает (функция над колонкой).</li>
+        <li><span class="tag tag-sql">SQL</span>Transaction isolation levels: READ COMMITTED vs REPEATABLE READ — почему важно для финансовых операций.</li>
+      </ul>
+      <div class="tip">⏱ HackerRank SQL секция: Medium/Hard задачи на aggregation и joins</div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d5">День 5</span>
+      <span class="day-title">Fintech-специфика: деньги, очереди, кэш</span>
+      <span class="day-focus">RabbitMQ + Redis в требованиях</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-algo">algo</span>Precision arithmetic в JS: почему нельзя использовать float для денег, как считать в копейках/центах (integer math).</li>
+        <li><span class="tag tag-algo">algo</span>Reconciliation алгоритм: два массива транзакций (PSP vs Bank), найти diff — two-pointer или hashmap, O(n) vs O(n log n).</li>
+        <li><span class="tag tag-sys">system design</span>RabbitMQ паттерны: Dead Letter Queue, message acknowledgment, at-least-once vs exactly-once delivery.</li>
+        <li><span class="tag tag-sys">system design</span>Redis паттерны: distributed lock (SETNX), pub/sub для уведомлений, TTL для сессий.</li>
+        <li><span class="tag tag-node">Node.js</span>Идемпотентность: как сделать PSP-запрос идемпотентным через idempotency key + Redis.</li>
+      </ul>
+      <div class="tip">⏱ Это не leetcode — пиши код сценариев руками, объясняй вслух почему именно так</div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d6">День 6</span>
+      <span class="day-title">System Design: payment platform архитектура</span>
+      <span class="day-focus">Lead-позиция — будут спрашивать дизайн</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-sys">system design</span>Спроектировать payment orchestration layer: как добавить нового PSP не трогая core (adapter pattern).</li>
+        <li><span class="tag tag-sys">system design</span>Как обеспечить exactly-once processing транзакции при падении сервиса посередине (saga pattern, outbox).</li>
+        <li><span class="tag tag-sys">system design</span>Webhook delivery система: гарантированная доставка, retry, ordering.</li>
+        <li><span class="tag tag-sys">system design</span>Как масштабировать routing engine под 10k TPS без единой точки отказа.</li>
+        <li><span class="tag tag-sys">system design</span>WebSocket для real-time статуса транзакции: архитектура от PSP callback до клиента.</li>
+      </ul>
+      <div class="tip">⏱ Для каждого — 15 мин набросать схему, потом объяснить trade-offs</div>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-badge d7">День 7</span>
+      <span class="day-title">Mock interview + слабые места</span>
+      <span class="day-focus">Финальный прогон</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="day-body">
+      <ul class="task-list">
+        <li><span class="tag tag-mock">mock</span>HackerRank в условиях: таймер 90 мин, без подсказок, 2 алго задачи + 1 SQL задача.</li>
+        <li><span class="tag tag-mock">mock</span>Повторить самые слабые темы из дней 1–6 — посмотреть на записи/решения.</li>
+        <li><span class="tag tag-mock">mock</span>Прочитать про себя ответы на: "как ты принимаешь технические решения", "как разруливаешь конфликты в команде" — это Lead.</li>
+        <li><span class="tag tag-mock">mock</span>Проверить окружение: Node.js версия, редактор, ни одного импорта лишнего.</li>
+      </ul>
+      <div class="tip">⏱ Не учи ничего нового в день 7 — только закрепление и отдых</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chevron.classList.toggle('open', !isOpen);
+}
+</script>
+</body></html>
